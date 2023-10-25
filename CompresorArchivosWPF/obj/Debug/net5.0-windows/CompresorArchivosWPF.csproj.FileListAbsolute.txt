@@ -1,0 +1,5 @@
+D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.csproj.AssemblyReference.cache
+D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\MainWindow.g.cs
+D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\App.g.cs
+D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF_MarkupCompile.cache
+D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF_MarkupCompile.lref

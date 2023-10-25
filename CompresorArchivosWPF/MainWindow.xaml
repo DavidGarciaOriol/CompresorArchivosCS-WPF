@@ -1,0 +1,24 @@
+﻿<Window x:Class="CompresorArchivosWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompresorArchivosWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu>
+            <MenuItem x:Name="menuArchivo" Header="_Archivo">
+                <MenuItem x:Name="abrirParaComprimir" Header="_Comprimir..."></MenuItem>
+                <MenuItem x:Name="menuRecientes" Header="_Recientes">
+                    <!-- RECIENTES AQUÍ -->
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="menuAcercaDe" Header="_Acerca de">
+                <Label x:Name="datosNombreAlumno" Content="David García Oriol"/>
+                <Label x:Name="datosCursoAlumno" Content="Curso: 2º DAM"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
