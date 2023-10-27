@@ -14,7 +14,6 @@
                 <MenuItem x:Name="listarRecientesItem" Header="_Listar comprimidos recientes" Icon="&#10000;" Click="ListarArchivosComprimidos_Click" />
                 <MenuItem x:Name="salirItem" Header="_Salir" Icon="&#10060;" Click="Salir_Click" />
             </MenuItem>
-            
             <MenuItem Header="Acerca de">
                 <Label Content="David García Oriol"/>
                 <Label Content="Clase: 2º DAM"/>
