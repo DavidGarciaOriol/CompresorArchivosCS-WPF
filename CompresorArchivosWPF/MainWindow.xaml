@@ -6,13 +6,19 @@
         xmlns:local="clr-namespace:CompresorArchivosWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
         <Menu>
             <MenuItem Header="_Archivo">
-                <MenuItem x:Name="nuevoArchivoItem" Header="_Nuevo archivo comprimido" Click="NuevoArchivoComprimido_Click" />
-                <MenuItem x:Name="listarRecientesItem" Header="_Listar comprimidos recientes" Click="ListarArchivosComprimidos_Click" />
+                <MenuItem x:Name="nuevoArchivoItem" Header="_Nuevo archivo comprimido" Icon="&#x1F4C2;" Click="NuevoArchivoComprimido_Click" />
+                <MenuItem x:Name="listarRecientesItem" Header="_Listar comprimidos recientes" Icon="&#10000;" Click="ListarArchivosComprimidos_Click" />
+                <MenuItem x:Name="salirItem" Header="_Salir" Icon="&#10060;" Click="Salir_Click" />
             </MenuItem>
-            <MenuItem Header="_Salir" Click="Salir_Click" />
+            
+            <MenuItem Header="Acerca de">
+                <Label Content="David García Oriol"/>
+                <Label Content="Clase: 2º DAM"/>
+            </MenuItem>
         </Menu>
         <ListBox Background="Transparent" x:Name="listBox" Margin="10,30,10,10"></ListBox>
     </Grid>
