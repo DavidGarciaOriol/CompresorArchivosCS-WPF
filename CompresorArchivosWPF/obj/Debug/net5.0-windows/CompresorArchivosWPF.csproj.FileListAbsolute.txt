@@ -20,3 +20,25 @@ D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\C
 D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\ref\CompresorArchivosWPF.dll
 D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.pdb
 D:\ciclot\DGO\Visual Studio Projects\CompresorArchivosWPF\CompresorArchivosWPF\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.genruntimeconfig.cache
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\bin\Debug\net5.0-windows\CompresorArchivosWPF.exe
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\bin\Debug\net5.0-windows\CompresorArchivosWPF.deps.json
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\bin\Debug\net5.0-windows\CompresorArchivosWPF.runtimeconfig.json
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\bin\Debug\net5.0-windows\CompresorArchivosWPF.runtimeconfig.dev.json
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\bin\Debug\net5.0-windows\CompresorArchivosWPF.dll
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\bin\Debug\net5.0-windows\CompresorArchivosWPF.pdb
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.csproj.AssemblyReference.cache
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\App.g.cs
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF_MarkupCompile.cache
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF_MarkupCompile.lref
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\MainWindow.baml
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.g.resources
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.AssemblyInfoInputs.cache
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.AssemblyInfo.cs
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.dll
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\refint\CompresorArchivosWPF.dll
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.pdb
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\CompresorArchivosWPF.genruntimeconfig.cache
+C:\Users\usuario\source\repos\DesarrolloInterfaces\DEI_UT1_TAR04_DGO\CompresorArchivosWPF\obj\Debug\net5.0-windows\ref\CompresorArchivosWPF.dll

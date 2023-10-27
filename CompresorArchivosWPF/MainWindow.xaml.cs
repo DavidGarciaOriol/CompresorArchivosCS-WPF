@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 
-/**
- * El método del drop-área ha sido confeccionado con la ayuda del modelo de lenguaje GPT 3.5.
- * Los comentarios correspondientes a esa parte del código son confeccionados por mí para demostrar el entendimiento
- * del fragmento de código y su integración, así como para facilitar su comprensión para reutilización de a futuro.
- */
-
 namespace CompresorArchivosWPF
 {
     public partial class MainWindow : Window
     {
-        // Lista de imágenes recientes.
-        private List<string> filePaths = new List<string>();
+        string[] files;
 
         public MainWindow()
         {
@@ -24,55 +19,113 @@ namespace CompresorArchivosWPF
             AllowDrop = true;
             Drop += FileDrop;
         }
-
-        // Se añade la imagen dropeada en el drop-área a la lista de recientes y se muestra en el marco.
         private void FileDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-                foreach (string file in files)
+                string archivoZip = "out\\" + GenerarNombreArchivoUnico();
+                ComprimirArchivos(files, archivoZip);
+
+            }
+        }
+        private void NuevoArchivoComprimido_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new()
+            {
+                Multiselect = true,
+                Title = "Selecciona archivos para comprimir",
+                Filter = "Archivos (*.*)|*.*"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string archivoZip = "out\\" + GenerarNombreArchivoUnico(); // Ruta y nombre del archivo ZIP
+                ComprimirArchivos(openFileDialog.FileNames, archivoZip);
+            }
+        }
+        private static void ComprimirArchivos(string[] archivos, string archivoZip)
+        {
+            try
+            {
+                using (ZipArchive archivo = ZipFile.Open(archivoZip, ZipArchiveMode.Update))
                 {
-                    filePaths.Add(file); // Se añade a la lista de rutas de recientes.
-                    AddRecentImageMenuItem(file); // Añade un nuevo componente a la lista de recientes que contendrá la ruta de la nueva imagen reciente.
-                    CompressFile(file); // La imagen se muestra en el visualizador.
+                    foreach (string archivoAComprimir in archivos)
+                    {
+                        string nombreArchivoEnZip = Path.GetFileName(archivoAComprimir);
+                        archivo.CreateEntryFromFile(archivoAComprimir, nombreArchivoEnZip);
+                    }
+                }
+
+                string recientesFile = "res\\recientes.txt";
+                EscribirRecientesEnTxt(archivos, recientesFile);
+
+                MessageBox.Show("Archivos comprimidos con éxito.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error al comprimir archivos: " + exception.Message);
+            }
+        }
+        private static void EscribirRecientesEnTxt(string[] rutasArchivos, string recientesFile)
+        {
+            try
+            {
+                using (StreamWriter writer = new(recientesFile, true))
+                {
+                    foreach (string rutaArchivo in rutasArchivos)
+                    {
+                        writer.WriteLine(rutaArchivo);
+                    }
+                }
+                MessageBox.Show("Rutas guardadas en el archivo de texto.");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error al guardar las rutas en el archivo de texto: " + exception.Message);
+            }
+        }
+        private void ListarArchivosComprimidos_Click(object sender, RoutedEventArgs e)
+        {
+            string recientesFile = "res\\recientes.txt";
+            MessageBox.Show("Lista de archivos recientes generada.");
+
+            if (File.Exists(recientesFile))
+            {
+                
+                string[] recientesOut = File.ReadAllLines(recientesFile);
+                listBox.Items.Clear();
+                foreach (string line in recientesOut)
+                {
+                    ListBoxItem listBoxItem = new()
+                    {
+                        Content = line,
+                        Tag = line
+                    };
+                    listBox.Items.Add(listBoxItem);
                 }
             }
-        }
-
-        // Muestra la imagen recibida por parámetros en forma de path en el visualizador.
-        private void CompressFile(string directoryPath)
-        {
-            // TODO
-
-            CommonDialog compressYesOrNoneDialog;
-            
-            if (true)
+            else
             {
-                // TODO
+                MessageBox.Show("No se encontró el archivo de lista de archivos comprimidos.");
             }
         }
 
-        // Método que abre la imagen reciente al clickar en el componente con la ruta de la imagen añadida anteriormente.
-        private void OpenFile_Click(object sender, RoutedEventArgs e)
+        private void Salir_Click(object sender, RoutedEventArgs e)
         {
-            string filePath = ((MenuItem)sender).Tag.ToString();
-            
-        }
+            MessageBoxResult result = MessageBox.Show("¿Deseas cerrar la aplicación?", "Salir", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-        private void AddRecentImageMenuItem(string filePath)
-        {
-            MenuItem recentFileMenuItem = new MenuItem();
-            recentFileMenuItem.Header = System.IO.Path.GetFileName(filePath);
-            recentFileMenuItem.Tag = filePath;
-            recentFileMenuItem.Click += OpenFile_Click;
-
-            if (menuRecientes.Items.Count >= 20)
+            if (result == MessageBoxResult.Yes)
             {
-                menuRecientes.Items.RemoveAt(19);
+                Close();
             }
-            menuRecientes.Items.Insert(0, recentFileMenuItem);
+        }
+        private static string GenerarNombreArchivoUnico()
+        {
+            // Genera un nombre de archivo basado en la fecha y hora actual
+            string fechaHoraActual = DateTime.Now.ToString("yyyyMMddHHmmss");
+            return "archivo_" + fechaHoraActual + ".zip";
         }
     }
 }

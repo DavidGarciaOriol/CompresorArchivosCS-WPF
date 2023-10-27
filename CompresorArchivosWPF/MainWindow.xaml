@@ -8,17 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Menu>
-            <MenuItem x:Name="menuArchivo" Header="_Archivo">
-                <MenuItem x:Name="abrirParaComprimir" Header="_Comprimir..."></MenuItem>
-                <MenuItem x:Name="menuRecientes" Header="_Recientes">
-                    <!-- RECIENTES AQUÍ -->
-                </MenuItem>
+            <MenuItem Header="_Archivo">
+                <MenuItem x:Name="nuevoArchivoItem" Header="_Nuevo archivo comprimido" Click="NuevoArchivoComprimido_Click" />
+                <MenuItem x:Name="listarRecientesItem" Header="_Listar comprimidos recientes" Click="ListarArchivosComprimidos_Click" />
             </MenuItem>
-            <MenuItem x:Name="menuAcercaDe" Header="_Acerca de">
-                <Label x:Name="datosNombreAlumno" Content="David García Oriol"/>
-                <Label x:Name="datosCursoAlumno" Content="Curso: 2º DAM"/>
-            </MenuItem>
+            <MenuItem Header="_Salir" Click="Salir_Click" />
         </Menu>
-
+        <ListBox Background="Transparent" x:Name="listBox" Margin="10,30,10,10"></ListBox>
     </Grid>
 </Window>
