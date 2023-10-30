@@ -11,6 +11,7 @@
         <Menu>
             <MenuItem Header="_Archivo">
                 <MenuItem x:Name="nuevoArchivoItem" Header="_Nuevo archivo comprimido" Icon="&#x1F4C2;" Click="NuevoArchivoComprimido_Click" />
+                <MenuItem x:Name="descomprimirArchivoItem" Header="_Descomprimir..." Icon="&#x1F4C2;" Click="DescomprimirArchivo_Click"></MenuItem>
                 <MenuItem x:Name="listarRecientesItem" Header="_Listar comprimidos recientes" Icon="&#10000;" Click="ListarArchivosComprimidos_Click" />
                 <MenuItem x:Name="salirItem" Header="_Salir" Icon="&#10060;" Click="Salir_Click" />
             </MenuItem>

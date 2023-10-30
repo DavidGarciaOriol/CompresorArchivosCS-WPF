@@ -25,7 +25,7 @@ namespace CompresorArchivosWPF
             {
                 files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-                string archivoZip = "out\\" + GenerarNombreArchivoUnico();
+                string archivoZip = "out\\zipped\\" + GenerarNombreArchivoUnico();
                 ComprimirArchivos(files, archivoZip);
 
             }
@@ -41,8 +41,24 @@ namespace CompresorArchivosWPF
 
             if (openFileDialog.ShowDialog() == true)
             {
-                string archivoZip = "out\\" + GenerarNombreArchivoUnico(); // Ruta y nombre del archivo ZIP
+                string archivoZip = "out\\zipped\\" + GenerarNombreArchivoUnico(); // Ruta y nombre del archivo ZIP
                 ComprimirArchivos(openFileDialog.FileNames, archivoZip);
+            }
+        }
+
+        private void DescomprimirArchivo_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new()
+            {
+                Multiselect = false,
+                Title = "Selecciona archivo para descomprimir",
+                Filter = "Archivo (*.zip)|*.zip|*.rar|*.7z"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string unzipPath = "out\\unzipped\\";
+                DescomprimirArchivo(openFileDialog.FileName, unzipPath);
             }
         }
         private static void ComprimirArchivos(string[] archivos, string archivoZip)
@@ -68,6 +84,27 @@ namespace CompresorArchivosWPF
                 MessageBox.Show("Error al comprimir archivos: " + exception.Message);
             }
         }
+
+        private static void DescomprimirArchivo(string archivoZip, string unzipPath)
+        {
+            try
+            {
+                string outFolder = Path.GetFileNameWithoutExtension(archivoZip);
+
+                if (Directory.Exists(outFolder))
+                {
+                    Directory.Delete(outFolder, true);
+                }
+
+                ZipFile.ExtractToDirectory(archivoZip, unzipPath);
+                MessageBox.Show("Éxito al descomprimir");
+            }
+            catch
+            {
+                MessageBox.Show("Error al descomprimir.");
+            }
+        }
+
         private static void EscribirRecientesEnTxt(string[] rutasArchivos, string recientesFile)
         {
             try
